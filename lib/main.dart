@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_quote/feature/quote/presentation/bloc/remote/quote/quote_bloc.dart';
 import 'package:flutter_quote/feature/quote/presentation/bloc/remote/quote/quote_event.dart';
 import 'package:flutter_quote/feature/quote/presentation/pages/quote_page.dart';
-
 import 'locator.dart';
 
 void main() async {
-  await initializeDependencies();
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
   runApp(
     BlocProvider<RemoteQuoteBloc>(
       create: (context) => sl()..add(const GetQuote()),
